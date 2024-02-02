@@ -4,12 +4,21 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'folder',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'marca/:id',
+    loadChildren: () => import('./cadastro/marca/marca.module').then( m => m.MarcaPageModule) 
+   
+  },
+  {
+    path: 'marca',
+    loadChildren: () => import('./cadastro/marca/marca.module').then( m => m.MarcaPageModule)
+  },
+  {
+    path: 'modelo',
+    loadChildren: () => import('./cadastro/modelo/modelo.module').then( m => m.ModeloPageModule)
   }
 ];
 
