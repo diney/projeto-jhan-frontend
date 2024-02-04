@@ -6,19 +6,18 @@ const routes: Routes = [
     path: '',
     redirectTo: 'folder',
     pathMatch: 'full'
+  },  
+  {
+    path: 'cadastro/marca',
+    loadChildren: () => import('./cadastro/marca/marca.module').then( m => m.MarcaPageModule)    
+  }, 
+  {
+    path: 'cadastro/marca/:id',
+    loadChildren: () => import('./cadastro/nova-marca/nova-marca.module').then( m => m.NovaMarcaPageModule)
   },
   {
-    path: 'marca/:id',
-    loadChildren: () => import('./cadastro/marca/marca.module').then( m => m.MarcaPageModule) 
-   
-  },
-  {
-    path: 'marca',
-    loadChildren: () => import('./cadastro/marca/marca.module').then( m => m.MarcaPageModule)
-  },
-  {
-    path: 'modelo',
-    loadChildren: () => import('./cadastro/modelo/modelo.module').then( m => m.ModeloPageModule)
+    path: 'nova-marca',
+    loadChildren: () => import('./cadastro/nova-marca/nova-marca.module').then( m => m.NovaMarcaPageModule)
   }
 ];
 

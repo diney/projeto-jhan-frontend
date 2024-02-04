@@ -1,39 +1,90 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Marca } from './model';
+import { MarcaDTO } from 'src/app/models/marca.dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MarcaService {
-  marca:Marca[]=[]
+  public marcas: MarcaDTO[] = [];
+  public marca!: MarcaDTO
 
-  constructor() { }
+  constructor(public http: HttpClient) {
 
-  this= [
-    {
-      "id": 34,
-      "logo":"/assets/images/logo.png",
-      "name": "Grand Theft Auto V"
-    },
-    {
-      "id": 59,
-      "logo":"/assets/images/logo.png",
-      "name": "Bloodstained Ritual of the Night"
-    },
-    {
-      "id": 60,
-      "logo":"/assets/images/logo.png",
-      "name": "F1 2019 - Anniversary Edition"
-    },
-    {
-      "id": 62,
-      "logo":"/assets/images/logo.png",
-      "name": "PLAYERUNKNOWN\'S BATTLEGROUNDS"
-    },
-    {
-      "id": 64,
-      "logo":"/assets/images/logo.png",
-      "name": "Batman: Arkham Knight"
+    this.marcas = [
+      {
+        "id": 34,
+        "logo": "/assets/images/logo.png",
+        "nome": "Marca 1"
+      },
+      {
+        "id": 59,
+        "logo": "/assets/images/logo.png",
+        "nome": "Marca 2"
+      },
+      {
+        "id": 60,
+        "logo": "/assets/images/logo.png",
+        "nome": "Marca 3"
+      },
+      {
+        "id": 62,
+        "logo": "/assets/images/logo.png",
+        "nome": "Marca 4"
+      },
+      {
+        "id": 64,
+        "logo": "/assets/images/logo.png",
+        "nome": "Marca 5"
+      }
+    ]
+  }
+  getCategorias() {
+    return this.marcas;
+  }
+
+  adicionarMarca(marca: MarcaDTO): void {
+    console.log(marca)
+    if (marca)
+      this.marcas.push(marca);
+    
+  }
+
+  findById(id: number):any {
+    if(id){
+      const objetoEncontrado =this.marcas.find(objeto => objeto.id === id);
+      return objetoEncontrado
+
     }
-  ]
+   
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Cadstro de marca', url: '/marca', icon: 'mail' },
-    { title: 'Cadstro de modelo', url: '/modelo', icon: 'paper-plane' },
-       
+    { title: 'Lista as marcas', url: 'cadastro/marca', icon: 'mail' },      
+    { title: 'Cadastro/Edição', url: 'nova-marca', icon: 'paper-plane' },
+    
+  
    
   ];
   
