@@ -13,18 +13,17 @@ export class MarcaPage {
   marcas: MarcaDTO[] = [];
   novaMarca!: MarcaDTO;
 
-  private marcaService = inject(MarcaService);
-  private activatedRoute = inject(ActivatedRoute)
+  private marcaService = inject(MarcaService);  
 
   constructor(private router: Router,) {
     this.marcas = this.marcaService.getCategorias();  
   }
 
   adicionarMarca(): void {
-    this.router.navigate(['nova-marca']);
+    this.router.navigate(['cadastro/nova-marca']);
   }
   
-  itemClick(marca: any) {   
+  itemClick(marca: any) {    
    if(marca)
    this.router.navigate(['cadastro/marca/' + marca.id]);
 

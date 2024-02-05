@@ -43,8 +43,7 @@ export class MarcaService {
     return this.marcas;
   }
 
-  adicionarMarca(marca: MarcaDTO): void {
-    console.log(marca)
+  adicionarMarca(marca: MarcaDTO): void {       
     if (marca)
       this.marcas.push(marca);
     
@@ -52,9 +51,9 @@ export class MarcaService {
 
   findById(id: number):any {
     if(id){
-      const objetoEncontrado =this.marcas.find(objeto => objeto.id === id);
-      return objetoEncontrado
-
+      const objetoEncontrado = this.marcas.find(objeto => objeto.id === id); 
+      if(objetoEncontrado)    
+      return objetoEncontrado;
     }
    
 

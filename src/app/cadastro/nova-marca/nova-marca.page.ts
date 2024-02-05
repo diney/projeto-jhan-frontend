@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MarcaService } from '../marca/marca.service';
@@ -10,7 +10,7 @@ import { MarcaDTO } from 'src/app/models/marca.dto';
   styleUrls: ['./nova-marca.page.scss'],
 })
 export class NovaMarcaPage {
-  
+
   public marcaId!: any;
   public titulo!: string;
   public marca = new MarcaDTO();
@@ -20,25 +20,21 @@ export class NovaMarcaPage {
   private marcaService = inject(MarcaService);
   private activatedRoute = inject(ActivatedRoute);
 
-  constructor(private formBuilder: FormBuilder,
-    private router: Router) {    
+  constructor(private formBuilder: FormBuilder ) {    
 
-    this.inicializarFormulario(this.marca);    
-    
+    this.inicializarFormulario(this.marca);       
     this.marcaId = this.activatedRoute.snapshot.paramMap.get('id') as string;
       
-    if (this.marcaId!=null ) {      
-      let editarMarca:MarcaDTO = this.marcaService.findById((Number(this.marcaId))) 
-     
-      this.formGroup.setValue(editarMarca);    
+    if (this.marcaId != null) {
+      let editarMarca: MarcaDTO = this.marcaService.findById((Number(this.marcaId)));     
+      this.formGroup.setValue(editarMarca);      
       this.titulo = "Editar marca"
     } else {
       this.titulo = "Cadastra marca"
-    }   
-    
-  }
+    }    
+  }     
 
-  inicializarFormulario(marca:MarcaDTO) {       
+  inicializarFormulario(marca:MarcaDTO) {      
     this.formGroup = this.formBuilder.group({
       id: [marca.id],
       nome: [marca.nome, Validators.required],
@@ -55,8 +51,10 @@ export class NovaMarcaPage {
   }  
 
   adicionar() {   
-    this.marcaService.adicionarMarca(this.formGroup.value)
+    this.marcaService.adicionarMarca(this.formGroup.value);
+    this.formGroup.reset();
     
   }
-  
+
+ 
 }
