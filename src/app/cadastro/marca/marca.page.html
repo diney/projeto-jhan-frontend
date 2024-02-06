@@ -1,17 +1,24 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
     <ion-title>Marcas</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding> 
+<ion-content padding>
   <ion-list>
     <ion-item *ngFor="let marca of marcas" (click)="itemClick(marca)">
       <ion-label>{{ marca.nome }}</ion-label>
     </ion-item>
-  </ion-list> 
+  </ion-list>
   <ion-fab class="custom-fab">
     <ion-fab-button (click)="adicionarMarca()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-</ion-content> 
+</ion-content>

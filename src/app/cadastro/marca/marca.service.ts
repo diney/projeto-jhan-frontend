@@ -43,26 +43,25 @@ export class MarcaService {
     return this.marcas;
   }
 
-  adicionarMarca(marca: MarcaDTO): void {       
+  adicionarMarca(marca: MarcaDTO): void {
     if (marca)
       this.marcas.push(marca);
-    
   }
 
-  findById(id: number):any {
-    if(id){
-      const objetoEncontrado = this.marcas.find(objeto => objeto.id === id); 
-      if(objetoEncontrado)    
-      return objetoEncontrado;
-    }  
+  findById(id: number): any {
+    if (id) {
+      const objetoEncontrado = this.marcas.find(objeto => objeto.id === id);
+      if (objetoEncontrado)
+        return objetoEncontrado;
+    }
   }
- 
+
   atualizarItem(id: number, novoNome: string): void {
-  const index = this.marcas.findIndex(item => item.id === id);
-  if (index !== -1) {
-    this.marcas[index].nome = novoNome;
+    const index = this.marcas.findIndex(item => item.id === id);
+    if (index !== -1) {
+      this.marcas[index].nome = novoNome;
+    }
   }
-}
 
 
 
