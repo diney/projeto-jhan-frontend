@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cadastro/nova-marca',
     loadChildren: () => import('./cadastro/nova-marca/nova-marca.module').then( m => m.NovaMarcaPageModule)
+  },
+  {
+    path: 'cadastro/modelo',
+    loadChildren: () => import('./cadastro/modelo/modelo.module').then( m => m.ModeloPageModule)
   }
 ];
 

@@ -13,27 +13,27 @@ export class MarcaService {
 
     this.marcas = [
       {
-        "id": 34,
+        "id": 1,
         "logo": "/assets/images/logo.png",
         "nome": "Marca 1"
       },
       {
-        "id": 59,
+        "id": 2,
         "logo": "/assets/images/logo.png",
         "nome": "Marca 2"
       },
       {
-        "id": 60,
+        "id": 3,
         "logo": "/assets/images/logo.png",
         "nome": "Marca 3"
       },
       {
-        "id": 62,
+        "id": 4,
         "logo": "/assets/images/logo.png",
         "nome": "Marca 4"
       },
       {
-        "id": 64,
+        "id": 5,
         "logo": "/assets/images/logo.png",
         "nome": "Marca 5"
       }
@@ -54,10 +54,15 @@ export class MarcaService {
       const objetoEncontrado = this.marcas.find(objeto => objeto.id === id); 
       if(objetoEncontrado)    
       return objetoEncontrado;
-    }
-   
-
+    }  
   }
+ 
+  atualizarItem(id: number, novoNome: string): void {
+  const index = this.marcas.findIndex(item => item.id === id);
+  if (index !== -1) {
+    this.marcas[index].nome = novoNome;
+  }
+}
 
 
 

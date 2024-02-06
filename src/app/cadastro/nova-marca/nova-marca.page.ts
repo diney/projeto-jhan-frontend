@@ -14,31 +14,31 @@ export class NovaMarcaPage {
   public marcaId!: any;
   public titulo!: string;
   public marca = new MarcaDTO();
- 
+
   formGroup!: FormGroup;
 
   private marcaService = inject(MarcaService);
   private activatedRoute = inject(ActivatedRoute);
 
-  constructor(private formBuilder: FormBuilder ) {    
+  constructor(private formBuilder: FormBuilder) {
 
-    this.inicializarFormulario(this.marca);       
+    this.inicializarFormulario(this.marca);
     this.marcaId = this.activatedRoute.snapshot.paramMap.get('id') as string;
-      
+
     if (this.marcaId != null) {
-      let editarMarca: MarcaDTO = this.marcaService.findById((Number(this.marcaId)));     
-      this.formGroup.setValue(editarMarca);      
+      let editarMarca: MarcaDTO = this.marcaService.findById((Number(this.marcaId)));
+      this.formGroup.setValue(editarMarca);
       this.titulo = "Editar marca"
     } else {
       this.titulo = "Cadastra marca"
-    }    
-  }     
+    }
+  }
 
-  inicializarFormulario(marca:MarcaDTO) {      
+  inicializarFormulario(marca: MarcaDTO) {
     this.formGroup = this.formBuilder.group({
       id: [marca.id],
       nome: [marca.nome, Validators.required],
-      logo: [marca.logo, Validators.required],
+      logo: [marca.logo],
     });
   }
 
@@ -46,15 +46,16 @@ export class NovaMarcaPage {
     const file = event.target.files[0];
     let caminho = URL.createObjectURL(file);
     if (caminho) {
-      this.formGroup.value.logo = caminho;          
+      this.formGroup.value.logo = caminho;
     }
-  }  
-
-  adicionar() {   
-    this.marcaService.adicionarMarca(this.formGroup.value);
-    this.formGroup.reset();
-    
   }
 
- 
+  adicionar() {
+    if (this.formGroup.valid) {      
+      this.marcaService.adicionarMarca(this.formGroup.value);
+      this.formGroup.reset();     
+    }
+  }
+  
+
 }
