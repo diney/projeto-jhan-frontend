@@ -36,7 +36,7 @@ export class NovaMarcaPage {
 
   inicializarFormulario(marca: MarcaDTO) {
     this.formGroup = this.formBuilder.group({
-      id: [marca.id],
+      id: [marca.id, Validators.required],
       nome: [marca.nome, Validators.required],
       logo: [marca.logo],
     });
