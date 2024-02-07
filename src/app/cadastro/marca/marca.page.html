@@ -13,6 +13,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let marca of marcas" (click)="itemClick(marca)">
+      <ion-thumbnail item-start>
+        <img [src]="'assets/imgs/prod.jpg'">
+      </ion-thumbnail>
       <ion-label>{{ marca.nome }}</ion-label>
     </ion-item>
   </ion-list>

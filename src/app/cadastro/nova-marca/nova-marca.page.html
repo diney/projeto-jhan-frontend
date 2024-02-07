@@ -14,19 +14,34 @@
   <form [formGroup]="formGroup" (ngSubmit)="adicionar(); $event.preventDefault()">
     <div *ngIf="!marcaId">
       <ion-item>
-        <ion-input label="Id" formControlName="id" labelPlacement="floating" placeholder="Digite Id"></ion-input>
+        <ion-input 
+          label="Id" 
+          formControlName="id" 
+          labelPlacement="floating" 
+          placeholder="Digite Id">
+      </ion-input>
       </ion-item>
     </div>
     <ion-item>
-      <ion-input label="Nome" formControlName="nome" labelPlacement="floating" placeholder="Digite o nome"></ion-input>
+      <ion-input 
+          label="Nome" 
+          formControlName="nome" 
+          labelPlacement="floating" 
+          placeholder="Digite o nome">
+      </ion-input>
     </ion-item>
     <div #minhaDiv>
       <ion-button color="primary" size="medium">
-        <input type="file" accept="image/*" (change)="fileInputLogo($event)" />
+        <input 
+          id="file" 
+          type="file" 
+          accept="image/*" 
+          (change)="fileInputLogo($event)"
+           />
       </ion-button>
     </div>
     <ion-item>
-      <ion-button type="submit" [disabled]="!formGroup.valid">Cadastrar</ion-button>
+      <ion-button type="submit" [disabled]="!formGroup.valid"  size="medium" >Cadastrar</ion-button>
     </ion-item>
   </form>
 </ion-content>

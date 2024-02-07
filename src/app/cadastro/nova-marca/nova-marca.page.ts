@@ -10,18 +10,15 @@ import { MarcaDTO } from 'src/app/models/marca.dto';
   styleUrls: ['./nova-marca.page.scss'],
 })
 export class NovaMarcaPage {
-
   public marcaId!: any;
   public titulo!: string;
   public marca = new MarcaDTO();
-
   formGroup!: FormGroup;
 
   private marcaService = inject(MarcaService);
   private activatedRoute = inject(ActivatedRoute);
 
   constructor(private formBuilder: FormBuilder) {
-
     this.inicializarFormulario(this.marca);
     this.marcaId = this.activatedRoute.snapshot.paramMap.get('id') as string;
 
@@ -44,18 +41,17 @@ export class NovaMarcaPage {
 
   fileInputLogo(event: any): void {
     const file = event.target.files[0];
-    let caminho = URL.createObjectURL(file);
-    if (caminho) {
+    if (file) {
+      let caminho = URL.createObjectURL(file);
       this.formGroup.value.logo = caminho;
     }
   }
 
   adicionar() {
-    if (this.formGroup.valid) {      
+    if (this.formGroup.valid) {
       this.marcaService.adicionarMarca(this.formGroup.value);
-      this.formGroup.reset();     
+      this.formGroup.value.logo = ""
+      this.formGroup.reset();
     }
   }
-  
-
 }
