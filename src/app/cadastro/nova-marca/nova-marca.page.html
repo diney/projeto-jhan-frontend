@@ -10,7 +10,7 @@
     <ion-title>Cadastra marca</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
+<ion-content [fullscreen]="true">
   <form [formGroup]="formGroup" (ngSubmit)="adicionar(); $event.preventDefault()">
     <div *ngIf="!marcaId">
       <ion-item>
@@ -30,14 +30,14 @@
           placeholder="Digite o nome">
       </ion-input>
     </ion-item>
-    <div #minhaDiv>
+    <div>
       <ion-button color="primary" size="medium">
         <input 
+          #myFileInput
           id="file" 
           type="file" 
           accept="image/*" 
-          (change)="fileInputLogo($event)"
-           />
+          (change)="fileInputLogo($event)"/>
       </ion-button>
     </div>
     <ion-item>
