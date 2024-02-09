@@ -1,0 +1,325 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.2.8",
+  "deps": {
+    "@angular/animations": "^17.0.2",
+    "@angular/common": "^17.0.2",
+    "@angular/compiler": "^17.0.2",
+    "@angular/core": "^17.0.2",
+    "@angular/forms": "^17.0.2",
+    "@angular/platform-browser": "^17.0.2",
+    "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/router": "^17.0.2",
+    "@capacitor/app": "5.0.7",
+    "@capacitor/core": "5.6.0",
+    "@capacitor/haptics": "5.0.7",
+    "@capacitor/keyboard": "5.0.8",
+    "@capacitor/status-bar": "5.0.7",
+    "@ionic/angular": "^7.0.0",
+    "ionicons": "^7.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.2",
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular-eslint/builder": "^17.0.0",
+    "@angular-eslint/eslint-plugin": "^17.0.0",
+    "@angular-eslint/eslint-plugin-template": "^17.0.0",
+    "@angular-eslint/schematics": "^17.0.0",
+    "@angular-eslint/template-parser": "^17.0.0",
+    "@angular/cli": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.2",
+    "@angular/language-service": "^17.0.2",
+    "@capacitor/cli": "5.6.0",
+    "@ionic/angular-toolkit": "^9.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsdoc": "30.7.6",
+    "eslint-plugin-prefer-arrow": "1.2.2",
+    "jasmine-core": "~5.1.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.2.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".browserslistrc",
+        "hash": "8928530114349553238"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "17241496168097493888"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "3555539555184033037"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "13924459389979241635"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "9820145720478233062"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "14730831395863803542"
+      },
+      {
+        "file": "angular.json",
+        "hash": "18223887574049399779"
+      },
+      {
+        "file": "capacitor.config.ts",
+        "hash": "15679616938094357764"
+      },
+      {
+        "file": "ionic.config.json",
+        "hash": "15740317734203275032"
+      },
+      {
+        "file": "karma.conf.js",
+        "hash": "15586218685649057480"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "6445054630570970849"
+      },
+      {
+        "file": "package.json",
+        "hash": "6428268342395834833"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "5592452507118953171"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "1246913992811641694"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3925798864425565485"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "3680979414714211701"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "3612302414466368426"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "803956817198083050"
+      },
+      {
+        "file": "src/app/cadastro/marca/marca-routing.module.ts",
+        "hash": "5539428472370721794"
+      },
+      {
+        "file": "src/app/cadastro/marca/marca.module.ts",
+        "hash": "18336076601333998561"
+      },
+      {
+        "file": "src/app/cadastro/marca/marca.page.html",
+        "hash": "7485211919762922387"
+      },
+      {
+        "file": "src/app/cadastro/marca/marca.page.scss",
+        "hash": "1032640304857158823"
+      },
+      {
+        "file": "src/app/cadastro/marca/marca.page.spec.ts",
+        "hash": "2484887639273283556"
+      },
+      {
+        "file": "src/app/cadastro/marca/marca.page.ts",
+        "hash": "13026458291904597265"
+      },
+      {
+        "file": "src/app/cadastro/modelo/modelo-routing.module.ts",
+        "hash": "8063476594262057313"
+      },
+      {
+        "file": "src/app/cadastro/modelo/modelo.module.ts",
+        "hash": "8697307618630325954"
+      },
+      {
+        "file": "src/app/cadastro/modelo/modelo.page.html",
+        "hash": "1879181464035713145"
+      },
+      {
+        "file": "src/app/cadastro/modelo/modelo.page.scss",
+        "hash": "4742777083922696515"
+      },
+      {
+        "file": "src/app/cadastro/modelo/modelo.page.spec.ts",
+        "hash": "8295439605783997967"
+      },
+      {
+        "file": "src/app/cadastro/modelo/modelo.page.ts",
+        "hash": "15981914143326195411"
+      },
+      {
+        "file": "src/app/cadastro/nova-marca/nova-marca-routing.module.ts",
+        "hash": "1954793902800870923"
+      },
+      {
+        "file": "src/app/cadastro/nova-marca/nova-marca.module.ts",
+        "hash": "2350946065656240543"
+      },
+      {
+        "file": "src/app/cadastro/nova-marca/nova-marca.page.html",
+        "hash": "12821005581297205066"
+      },
+      {
+        "file": "src/app/cadastro/nova-marca/nova-marca.page.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/cadastro/nova-marca/nova-marca.page.spec.ts",
+        "hash": "12809429841124202036"
+      },
+      {
+        "file": "src/app/cadastro/nova-marca/nova-marca.page.ts",
+        "hash": "12208069236868081428"
+      },
+      {
+        "file": "src/app/cadastro/novo-modelo/novo-modelo-routing.module.ts",
+        "hash": "1443117371735738066"
+      },
+      {
+        "file": "src/app/cadastro/novo-modelo/novo-modelo.module.ts",
+        "hash": "3948285573958110847"
+      },
+      {
+        "file": "src/app/cadastro/novo-modelo/novo-modelo.page.html",
+        "hash": "4024084733646319252"
+      },
+      {
+        "file": "src/app/cadastro/novo-modelo/novo-modelo.page.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/cadastro/novo-modelo/novo-modelo.page.spec.ts",
+        "hash": "8297879326834288511"
+      },
+      {
+        "file": "src/app/cadastro/novo-modelo/novo-modelo.page.ts",
+        "hash": "18071688141374229618"
+      },
+      {
+        "file": "src/app/folder/folder-routing.module.ts",
+        "hash": "11221433021134652442"
+      },
+      {
+        "file": "src/app/folder/folder.module.ts",
+        "hash": "16698637248064392709"
+      },
+      {
+        "file": "src/app/folder/folder.page.html",
+        "hash": "15229342868038684927"
+      },
+      {
+        "file": "src/app/folder/folder.page.scss",
+        "hash": "15290328609562197644"
+      },
+      {
+        "file": "src/app/folder/folder.page.spec.ts",
+        "hash": "2370043544416927716"
+      },
+      {
+        "file": "src/app/folder/folder.page.ts",
+        "hash": "8667443592063313984"
+      },
+      {
+        "file": "src/app/models/marca.dto.ts",
+        "hash": "7994206779109285975"
+      },
+      {
+        "file": "src/app/models/modelo.dto.ts",
+        "hash": "15323325474485362635"
+      },
+      {
+        "file": "src/app/service/marca.service.ts",
+        "hash": "16946678242396086255"
+      },
+      {
+        "file": "src/app/service/modelo.service.ts",
+        "hash": "798094817061955587"
+      },
+      {
+        "file": "src/assets/icon/favicon.png",
+        "hash": "17482944836898362639"
+      },
+      {
+        "file": "src/assets/imgs/prod.jpg",
+        "hash": "1073137962010149252"
+      },
+      {
+        "file": "src/assets/shapes.svg",
+        "hash": "6713572288142939778"
+      },
+      {
+        "file": "src/environments/environment.prod.ts",
+        "hash": "11847377846594200203"
+      },
+      {
+        "file": "src/environments/environment.ts",
+        "hash": "14410313991637913761"
+      },
+      {
+        "file": "src/global.scss",
+        "hash": "1918626602965251672"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "12859993114988254134"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "14418682105238715715"
+      },
+      {
+        "file": "src/polyfills.ts",
+        "hash": "6334563476032399242"
+      },
+      {
+        "file": "src/test.ts",
+        "hash": "7876741224155508608"
+      },
+      {
+        "file": "src/theme/variables.scss",
+        "hash": "1401588435906922895"
+      },
+      {
+        "file": "src/zone-flags.ts",
+        "hash": "6117193595888083885"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "7685451593566938896"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "14025965691221551535"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "14277469517724802009"
+      }
+    ]
+  }
+}

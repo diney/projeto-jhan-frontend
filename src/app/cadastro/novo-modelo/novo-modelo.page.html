@@ -12,34 +12,24 @@
 </ion-header>
 <ion-content [fullscreen]="true">
   <form [formGroup]="formGroup" (ngSubmit)="adicionar()">
-    <div >
+    <div>
       <ion-item>
-        <ion-input 
-          label="Id" 
-          formControlName="id" 
-          labelPlacement="floating" 
-          placeholder="Digite Id">
-      </ion-input>
+        <ion-input label="Id" formControlName="id" labelPlacement="floating" placeholder="Digite Id">
+        </ion-input>
       </ion-item>
     </div>
     <ion-item>
-      <ion-input 
-          label="Nome" 
-          formControlName="nome" 
-          labelPlacement="floating" 
-          placeholder="Digite o nome">
+      <ion-input label="Nome" formControlName="nome" labelPlacement="floating" placeholder="Digite o nome">
       </ion-input>
     </ion-item>
     <div>
-      <ion-button color="primary" size="medium">
-        <input 
-          #myFileInput
-          id="file" 
-          type="file" 
-          accept="image/*" 
-          (change)="fileInputLogo($event)"/>
-      </ion-button>
-    </div>      
-      <ion-button color="success" expand="block" type="submit" [disabled]="!formGroup.valid">Cadastrar</ion-button>    
-     </form>
+      <ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of results" (click)="itemClick(item)">
+          <ion-label>{{ item }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    <ion-button color="success" expand="block" type="submit" [disabled]="!formGroup.valid">Cadastrar</ion-button>
+  </form>
 </ion-content>
