@@ -12,7 +12,6 @@ import { ModeloService } from 'src/app/service/modelo.service';
   styleUrls: ['./novo-modelo.page.scss'],
 })
 export class NovoModeloPage {
-  @ViewChild('search', { static: false }) search: ElementRef | undefined;
   public modeloId!: any;
   public titulo!: string;
   public modelo = new ModeloDTO();
@@ -20,6 +19,7 @@ export class NovoModeloPage {
   public inptFile: any;
   public marcas: MarcaDTO[] = [];
   public results: MarcaDTO[] = [];
+  public showList: boolean = true;
   
 
   private modeloService = inject(ModeloService);
@@ -70,6 +70,7 @@ export class NovoModeloPage {
   }
 
   handleInput(event: any) {
+    this.results = [];
     const query = event.target.value.toLowerCase();
     if (query) {
       this.results = this.marcas.filter(
@@ -82,6 +83,7 @@ export class NovoModeloPage {
 
   itemClick(item: any) {
     this.formGroup.value.modelo_id = item.id;
+    this.showList = false;
 
   }
 }
