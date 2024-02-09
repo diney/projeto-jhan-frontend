@@ -14,22 +14,35 @@
   <form [formGroup]="formGroup" (ngSubmit)="adicionar()">
     <div>
       <ion-item>
-        <ion-input label="Id" formControlName="id" labelPlacement="floating" placeholder="Digite Id">
+        <ion-input 
+          label="Id" 
+          formControlName="id" 
+          labelPlacement="floating" 
+          placeholder="Digite Id">
         </ion-input>
       </ion-item>
     </div>
     <ion-item>
-      <ion-input label="Nome" formControlName="nome" labelPlacement="floating" placeholder="Digite o nome">
+      <ion-input 
+        label="Nome" 
+        formControlName="nome" 
+        labelPlacement="floating" 
+        placeholder="Digite o nome">
       </ion-input>
     </ion-item>
-    <div>
-      <ion-searchbar #search [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+    <div>      
+      <ion-searchbar 
+        formControlName="id" 
+        #search [debounce]="1000"  
+        placeholder="Selecione uma marca"
+        (ionInput)="handleInput($event)">
+     </ion-searchbar>
       <ion-list>
-        <ion-item *ngFor="let item of results" (click)="itemClick(item)">
-          <ion-label>{{ item }}</ion-label>
+        <ion-item *ngFor="let item of marcas" (click)="itemClick(item)">
+          <ion-label>{{ item.nome }}</ion-label>
         </ion-item>
       </ion-list>
     </div>
     <ion-button color="success" expand="block" type="submit" [disabled]="!formGroup.valid">Cadastrar</ion-button>
-  </form>
+  </form> 
 </ion-content>

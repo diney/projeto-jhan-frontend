@@ -20,6 +20,7 @@ export class NovoModeloPage {
   public inptFile: any;
   public marcas: MarcaDTO[] = [];
   public results: MarcaDTO[] = [];
+  
 
   private modeloService = inject(ModeloService);
   private activatedRoute = inject(ActivatedRoute);
@@ -70,7 +71,6 @@ export class NovoModeloPage {
 
   handleInput(event: any) {
     const query = event.target.value.toLowerCase();
-    console.log(query);
     if (query) {
       this.results = this.marcas.filter(
         (d) => d.nome.toLowerCase().indexOf(query) > -1
@@ -80,9 +80,8 @@ export class NovoModeloPage {
     this.results = [];
   }
 
-  itemClick(result: any) {
-    this.formGroup.value.marcaId = result;
-    const input: HTMLInputElement = this.search?.nativeElement;
-    input.value = '';
+  itemClick(item: any) {
+    this.formGroup.value.modelo_id = item.id;
+
   }
 }
