@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MarcaDTO } from 'src/app/models/marca.dto';
@@ -12,13 +12,14 @@ import { ModeloService } from 'src/app/service/modelo.service';
   styleUrls: ['./novo-modelo.page.scss'],
 })
 export class NovoModeloPage {
+  @ViewChild('search', { static: false }) search: ElementRef | undefined;
   public modeloId!: any;
   public titulo!: string;
   public modelo = new ModeloDTO();
-  formGroup!: FormGroup;
+  public formGroup!: FormGroup;
   public inptFile: any;
-  marcas: MarcaDTO[] = [];
-  results: MarcaDTO[] = [];
+  public marcas: MarcaDTO[] = [];
+  public results: MarcaDTO[] = [];
 
   private modeloService = inject(ModeloService);
   private activatedRoute = inject(ActivatedRoute);
@@ -67,7 +68,7 @@ export class NovoModeloPage {
     }
   }
 
-  handleInput(event:any) {
+  handleInput(event: any) {
     const query = event.target.value.toLowerCase();
     console.log(query);
     if (query) {
@@ -80,6 +81,8 @@ export class NovoModeloPage {
   }
 
   itemClick(result: any) {
-    console.log(result);
+    this.formGroup.value.marcaId = result;
+    const input: HTMLInputElement = this.search?.nativeElement;
+    input.value = '';
   }
 }
