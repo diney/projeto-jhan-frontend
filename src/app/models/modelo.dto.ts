@@ -1,5 +1,6 @@
-export interface ModeloDTO {
-    id?: number;
-    logo: string;
-    marca_id?:number;
-  }
+
+export class ModeloDTO {
+  id!: number;
+  nome!: string;
+  modelo_id!: number;
+}

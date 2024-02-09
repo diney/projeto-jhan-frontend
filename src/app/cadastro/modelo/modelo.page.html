@@ -7,8 +7,21 @@
         </ion-button>
       </ion-menu-toggle>
     </ion-buttons>
-    <ion-title>Modelo</ion-title>
+    <ion-title>Modelos</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>  
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let modelo of modelos" (click)="itemClick(modelo)">
+      <ion-thumbnail item-start>
+        <img [src]="'assets/imgs/prod.jpg'">
+      </ion-thumbnail>
+      <ion-label>{{ modelo.nome }}</ion-label>     
+    </ion-item>
+  </ion-list>
+  <ion-fab class="custom-fab">
+    <ion-fab-button (click)="adicionarModelo()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

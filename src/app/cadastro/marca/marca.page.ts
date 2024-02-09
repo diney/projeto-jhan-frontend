@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { MarcaService } from './marca.service';
+import { MarcaService } from 'src/app/service/marca.service';
 import { MarcaDTO } from 'src/app/models/marca.dto';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-marca',
@@ -15,8 +15,8 @@ export class MarcaPage {
 
   private marcaService = inject(MarcaService);
 
-  constructor(private router: Router,) {
-    this.marcas = this.marcaService.getCategorias();
+  constructor(private router: Router) {
+    this.marcas = this.marcaService.getMarcas();
   }
 
   adicionarMarca(): void {

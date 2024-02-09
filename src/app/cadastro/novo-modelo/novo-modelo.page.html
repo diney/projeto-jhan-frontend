@@ -7,12 +7,12 @@
         </ion-button>
       </ion-menu-toggle>
     </ion-buttons>
-    <ion-title>Cadastra marca</ion-title>
+    <ion-title>{{titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
   <form [formGroup]="formGroup" (ngSubmit)="adicionar()">
-    <div *ngIf="!marcaId">
+    <div >
       <ion-item>
         <ion-input 
           label="Id" 

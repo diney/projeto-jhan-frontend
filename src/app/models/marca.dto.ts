@@ -1,5 +1,5 @@
 export class MarcaDTO {
-    id?: number;
+    id!: number;
     logo!: string;
     nome!: string;
   }

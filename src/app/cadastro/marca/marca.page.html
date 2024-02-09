@@ -10,7 +10,7 @@
     <ion-title>Marcas</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
+<ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let marca of marcas" (click)="itemClick(marca)">
       <ion-thumbnail item-start>

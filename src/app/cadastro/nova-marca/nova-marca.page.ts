@@ -1,7 +1,7 @@
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MarcaService } from '../marca/marca.service';
+import { MarcaService } from 'src/app/service/marca.service';
 import { MarcaDTO } from 'src/app/models/marca.dto';
 
 @Component({
@@ -10,7 +10,6 @@ import { MarcaDTO } from 'src/app/models/marca.dto';
   styleUrls: ['./nova-marca.page.scss'],
 })
 export class NovaMarcaPage {
-  @ViewChild('fileInput', { static: false }) myFileInput!: ElementRef;
   public marcaId!: any;
   public titulo!: string;
   public marca = new MarcaDTO();
@@ -19,7 +18,6 @@ export class NovaMarcaPage {
 
   private marcaService = inject(MarcaService);
   private activatedRoute = inject(ActivatedRoute);
-
 
   constructor(private formBuilder: FormBuilder) {
     this.inicializarFormulario(this.marca);
@@ -48,7 +46,6 @@ export class NovaMarcaPage {
     if (file) {
       let caminho = URL.createObjectURL(file);
       this.formGroup.value.logo = caminho;
-
     }
   }
 
@@ -56,7 +53,9 @@ export class NovaMarcaPage {
     if (this.formGroup.valid) {
       this.marcaService.adicionarMarca(this.formGroup.value);
       this.formGroup.value.logo = '';
-      this.inptFile.value = ''
+      if (this.inptFile) {
+        this.inptFile.value = ''
+      }
       this.formGroup.reset();
     }
   }

@@ -39,7 +39,7 @@ export class MarcaService {
       }
     ]
   }
-  getCategorias() {
+  getMarcas() {
     return this.marcas;
   }
 

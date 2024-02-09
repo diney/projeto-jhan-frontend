@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ModeloPageRoutingModule } from './modelo-routing.module';
-import { ModeloPage } from './modelo.page';
+import { NovoModeloPageRoutingModule } from './novo-modelo-routing.module';
+import { NovoModeloPage } from './novo-modelo.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ModeloPageRoutingModule,
-    ReactiveFormsModule
+    NovoModeloPageRoutingModule,
+    ReactiveFormsModule,
   ],
-  declarations: [ModeloPage]
+  declarations: [NovoModeloPage]
 })
-export class ModeloPageModule { }
+export class NovoModeloPageModule { }
