@@ -33,8 +33,7 @@ export class NovoModeloPage {
     this.modeloId = this.activatedRoute.snapshot.paramMap.get('id') as string;   
 
     if (this.modeloId != null) {
-      let editarModelo: ModeloDTO = this.modeloService.findById( Number(this.modeloId));
-      console.log(editarModelo)
+      let editarModelo: ModeloDTO = this.modeloService.findById( Number(this.modeloId));     
       this.formGroup.setValue(editarModelo);
       this.titulo = 'Editar modelo';
     } else {
