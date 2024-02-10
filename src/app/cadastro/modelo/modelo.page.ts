@@ -21,6 +21,7 @@ export class ModeloPage {
     private router: Router) {
 
     this.modelos = this.modeloService.getModelos();
+    console.log(this.modelos)
 
     this.inicializarFormulario(this.modelo);
   }

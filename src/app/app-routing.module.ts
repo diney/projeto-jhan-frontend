@@ -7,7 +7,7 @@ const routes: Routes = [
     redirectTo: 'folder',
     pathMatch: 'full'
   },
-  {
+    {
     path: 'cadastro/marca',
     loadChildren: () => import('./cadastro/marca/marca.module').then(m => m.MarcaPageModule)
   },

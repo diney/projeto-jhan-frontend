@@ -13,7 +13,7 @@
 <ion-content [fullscreen]="true">
   <form [formGroup]="formGroup" (ngSubmit)="adicionar()">
     <div>
-      <ion-item>
+      <ion-item *ngIf="!modeloId">
         <ion-input 
           label="Id" 
           formControlName="id" 
@@ -31,8 +31,7 @@
       </ion-input>
     </ion-item>
     <div>      
-      <ion-searchbar 
-        formControlName="id" 
+      <ion-searchbar      
         [debounce]="1000"  
         placeholder="Selecione uma marca"
         (ionInput)="handleInput($event)">
@@ -44,5 +43,6 @@
       </ion-list>
     </div>
     <ion-button color="success" expand="block" type="submit" [disabled]="!formGroup.valid">Cadastrar</ion-button>
-  </form> 
+  </form>
+  <pre>{{formGroup.value|json}}</pre> 
 </ion-content>

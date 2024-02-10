@@ -15,39 +15,40 @@ export class ModeloService {
       {
         "id": 1,
         "nome": "Modelo 1",
-        "modelo_id": 1
+        "modelo_id": 10
       },
       {
         "id": 2,
         "nome": "Modelo 2",
-        "modelo_id": 2
+        "modelo_id": 20
       },
       {
         "id": 3,
         "nome": "Modelo 3",
-        "modelo_id": 3
+        "modelo_id": 30
       },
       {
         "id": 4,
         "nome": "Modelo 4",
-        "modelo_id": 4
+        "modelo_id": 40
       },
       {
         "id": 5,
         "nome": "Modelo 5",
-        "modelo_id": 5
+        "modelo_id": 50
       }
     ]
   };
-  
+
 
   getModelos() {
     return this.modelos;
   }
 
-  adicionarModelo(modelo: ModeloDTO): void {
+  adicionarModelo(modelo: any): void {
     if (modelo)
-      this.modelos.push(this.modelo);
+      this.modelos.push(modelo);
+
   }
 
   findById(id: number): any {
@@ -61,7 +62,7 @@ export class ModeloService {
   atualizarItem(id: number, novoNome: string): void {
     const index = this.modelos.findIndex(item => item.id === id);
     if (index !== -1) {
-      this.modelos[index].nome = novoNome;
+      this.modelos[index].modelo_id = id;
     }
   }
 

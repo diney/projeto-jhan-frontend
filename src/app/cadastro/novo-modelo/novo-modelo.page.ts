@@ -20,6 +20,7 @@ export class NovoModeloPage {
   public marcas: MarcaDTO[] = [];
   public results: MarcaDTO[] = [];
   public showList: boolean = true;
+  public valor:any;
   
 
   private modeloService = inject(ModeloService);
@@ -29,12 +30,11 @@ export class NovoModeloPage {
   constructor(private formBuilder: FormBuilder) {
     this.marcas = this.marcaService.getMarcas();
     this.inicializarFormulario(this.modelo);
-    this.modeloId = this.activatedRoute.snapshot.paramMap.get('id') as string;
+    this.modeloId = this.activatedRoute.snapshot.paramMap.get('id') as string;   
 
     if (this.modeloId != null) {
-      let editarModelo: ModeloDTO = this.modeloService.findById(
-        Number(this.modeloId)
-      );
+      let editarModelo: ModeloDTO = this.modeloService.findById( Number(this.modeloId));
+      console.log(editarModelo)
       this.formGroup.setValue(editarModelo);
       this.titulo = 'Editar modelo';
     } else {
@@ -49,23 +49,11 @@ export class NovoModeloPage {
       modelo_id: [modelo.modelo_id],
     });
   }
-
-  fileInputLogo(event: any): void {
-    this.inptFile = event.currentTarget as HTMLInputElement;
-    const file = event.target.files[0];
-    if (file) {
-      let caminho = URL.createObjectURL(file);
-      this.formGroup.value.logo = caminho;
-    }
-  }
+ 
   adicionar() {
-    if (this.formGroup.valid) {
-      this.modeloService.adicionarModelo(this.formGroup.value);
-      this.formGroup.value.logo = '';
-      if (this.inptFile) {
-        this.inptFile.value = '';
-      }
-      this.formGroup.reset();
+    if (this.formGroup.valid) {   
+       this.modeloService.adicionarModelo(this.formGroup.value)      
+       this.formGroup.reset();
     }
   }
 
@@ -75,14 +63,15 @@ export class NovoModeloPage {
     if (query) {
       this.results = this.marcas.filter(
         (d) => d.nome.toLowerCase().indexOf(query) > -1
-      );
+      );      
       return;
     }
     this.results = [];
   }
 
-  itemClick(item: any) {
-    this.formGroup.value.modelo_id = item.id;
+  itemClick(item: any) {  
+    this.valor= item.nome
+    this.formGroup.value.modelo_id = item.id;   
     this.showList = false;
 
   }
